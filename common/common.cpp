@@ -50,3 +50,12 @@ std::vector<std::string> fizz_buzz(int num){
   }
   return list;
 }
+
+//show prime numbers up to n
+void print_primes(int n){
+
+}
+
+//prime numbers using thieves of erasthatos
+
+//get matching characters in a string

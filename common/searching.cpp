@@ -9,3 +9,12 @@ void BFS(){
 void DFS(){
 
 }
+
+//dijikstra
+void dijikstra(){
+
+}
+
+//linear sort
+
+//binary sort
