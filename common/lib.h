@@ -13,7 +13,10 @@ void reverse_list(int**);
 std::vector<std::string> fizz_buzz(int);
 
 //lists.cpp
-node* link_list(int[]);
+std::vector<node*> link_list(int[], int);
+node* reverse_list(node*);
+void print_list(node*);
+node* doubly_link_list(node*);
 
 //sorting.cpp
 

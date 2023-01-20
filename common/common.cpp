@@ -53,7 +53,12 @@ std::vector<std::string> fizz_buzz(int num){
 
 //show prime numbers up to n
 void print_primes(int n){
-
+  std::vector<int> primes;
+  for (int i=1; i<n+1; i++){
+    if (i == 1 || i == 2){
+      return i
+    }
+  }
 }
 
 //prime numbers using thieves of erasthatos
