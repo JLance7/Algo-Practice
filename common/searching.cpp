@@ -12,9 +12,6 @@ void DFS(){
 
 //dijikstra
 void dijikstra(){
-
+  //TODO
 }
 
-//linear sort
-
-//binary sort

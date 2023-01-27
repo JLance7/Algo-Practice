@@ -1,6 +1,7 @@
 #include <iostream>
 #include "node.h"
 #include <vector>
+#include "DoublyLinkList.h"
 
 
 //create linked list
@@ -40,30 +41,42 @@ void print_list(node* head){
 }
 
 //------------------------------------------------
+node* DoublyLinkList::add_items(int arr[], int n){
+  node* current, *previous;
+  for (int i=0; i<n; i++){
+    current = new node;
+    current->data = arr[i];
+    if (i == 0){
+      head = current; 
+    } 
+    else{
+      previous->next = current;
+      current->next2 = previous;
+    } 
+    previous = current;
+  }
+  tail = current;
+  return head;
+}
 
-//alternative class style doubly linked list example
-class DoublyLinkList{
-  private:
-    node* head,*tail;
-  public:
-    DoublyLinkList(){ head = NULL; }
+void DoublyLinkList::print_items(){
+  node* curr = head;
+  std::cout << "Forward:" << std::endl;
+  while (curr != NULL){
+    std::cout << curr->data;
+    if (curr->next != NULL)
+      std::cout << "->";
+    curr = curr->next;
+  }
+  std::cout << "\n";
 
-    node* add_items(int arr[], int n){
-      node* current, *previous;
-      for (int i=0; i<n; i++){
-        current = new node;
-        current->data = arr[i];
-        if (i == 0){
-          head = current; 
-          head->next2 = NULL;
-        } 
-        else{
-          previous->next = current;
-        } 
-        previous = current;
-      }
-    }
-
-    node* get_head(){ return head; }
-    node* get_tail(){ return tail; }
-};
+  curr = tail;
+  std::cout << "Backward:" << std::endl;
+  while (curr != NULL){
+    std::cout << curr->data;
+    if (curr->next2 != NULL)
+      std::cout << "->";
+    curr = curr->next2;
+  }
+  std::cout << "\n";
+}

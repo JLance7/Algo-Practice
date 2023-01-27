@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -g -Wall 
 TARGET = main
 OBJ = main.o common.o lists.o searching.o sorting.o graphs.o
-HEADERS = lib.h node.h
+HEADERS = lib.h node.h DoublyLinkList.h
 DEPENDENCIES = $(HEADERS) $(OBJ)
 
 .PHONY: make

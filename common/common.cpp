@@ -62,20 +62,25 @@ std::unordered_map<char, std::vector<int>> matches(std::string list){
     std::vector<int> my_list;
     if (umap.find(c) != umap.end()){
       my_list = umap[c];
-      my_list.push_back(c);
+      my_list.push_back(i);
     }
     else {
-      my_list.push_back(c);
+      my_list.push_back(i);
     }
     umap[c] = my_list;
   }
 
   //remove keys with only one value
   std::unordered_map<char, std::vector<int>>::iterator itr;
+  std::vector<char> keys;
   for (itr = umap.begin(); itr != umap.end(); itr++){
     if (itr->second.size() == 1){
-      umap.erase(itr->first);
+      keys.push_back(itr->first);
     }
+  }
+
+  for (auto key: keys){
+    umap.erase(key);
   }
 
   return umap;
@@ -118,6 +123,29 @@ void print_primes(int n){
 }
 
 //prime numbers using sieves of erasthatos (more optimal)
+//not prime if number is divisible by i and number is >= i^2
 void print_primes_sieves(int n){
+  int size = n + 1;
+  bool primes[size];
+  //mark all numbers as true at start
+  for (int i=0; i<size; i++){
+    primes[i] = true;
+  }
 
+  //for each number, if it is true
+  for (int i=2; i*i <= n; i++){
+    if (primes[i] == true){
+      //starting from that number squared, any number divisiible by it is not prime
+      for (int j=i * i; j<= n; j+= i){
+        primes[j] = false;
+      }
+    }
+  }
+
+  for (int i=2; i<size; i++){
+    if (primes[i]){
+      std::cout << i << " ";
+    }
+  }
+  std::cout << "\n";
 }

@@ -9,15 +9,10 @@
   Runner for different algos
 */
 int main(int argc, char** argv){
-  std::unordered_map<char, std::vector<int>> umap = matches("hello");
-  std::unordered_map<char, std::vector<int>>::iterator itr;
-  for (itr = umap.begin(); itr != umap.end(); itr++){
-    std::cout << itr->first << " - ";
-    for (auto index : itr->second){
-      std::cout << index << " ";
-    }
-    std::cout << "\n";
-  }
+  int arr[] = {1, 2, 3, 4, 5};
+  DoublyLinkList list;
+  list.add_items(arr, 5);
+  list.print_items();
 
   return EXIT_SUCCESS;
 }

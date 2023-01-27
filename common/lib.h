@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "node.h"
+#include "DoublyLinkList.h"
 #include <unordered_map>
 
 //function prototypes
@@ -21,7 +22,6 @@ void print_primes_sieves(int);
 std::vector<node*> link_list(int[], int);
 node* reverse_list(node*);
 void print_list(node*);
-node* doubly_link_list(node*);
 
 //sorting.cpp
 
