@@ -1,6 +1,6 @@
 #ifndef DOUBLY_LINK_LIST_H
 #define DOUBLY_LINK_LIST_H
-#include "node.h"
+#include "node.hpp"
 
 //alternative class style doubly linked list example
 class DoublyLinkList{
@@ -10,7 +10,7 @@ class DoublyLinkList{
     inline DoublyLinkList(){ head = NULL; tail = NULL; }
     inline ~DoublyLinkList(){
       while (head != NULL){
-        node* temp = head;
+        node* temp = head->next;
         delete head;
         head = temp;
       }

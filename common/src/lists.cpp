@@ -1,7 +1,7 @@
 #include <iostream>
-#include "node.h"
 #include <vector>
-#include "DoublyLinkList.h"
+#include "../headers/node.hpp"
+#include "../headers/DoublyLinkList.hpp"
 
 
 //create linked list

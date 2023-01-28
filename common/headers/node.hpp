@@ -4,8 +4,8 @@
 
 struct node{
   int data;
-  node* next = NULL;
-  node* next2 = NULL;
+  node* next = NULL; //right
+  node* next2 = NULL; //left
 };
 
 #endif

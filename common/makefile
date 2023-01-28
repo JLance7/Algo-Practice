@@ -1,19 +1,22 @@
 CC = g++
-CFLAGS = -g -Wall 
 TARGET = main
-OBJ = main.o common.o lists.o searching.o sorting.o graphs.o
-HEADERS = lib.h node.h DoublyLinkList.h
-DEPENDENCIES = $(HEADERS) $(OBJ)
+SRC_DIR = . src
 
-.PHONY: make
-make: $(TARGET)
+HEADER_FILES = $(foreach D, $(HEADER_DIR), $(wildcard $(D)/*.hpp)) # header files with directory prefix
+CPP_FILES = $(foreach D, $(SRC_DIR), $(wildcard $(D)/*.cpp)) 
+OBJECTS = $(patsubst %.cpp, %.o, $(CPP_FILES)) # take all subdirectory cpp to .o
+CFLAGS = -g -Wall 
 
-$(TARGET): $(DEPENDENCIES)
-	$(CC) $(CFLAGS) $^ -o $@
+
+.PHONY: all
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS) $(HEADER_FILES)
+	$(CC) $(CFLAGS) -I headers $^ -o $@ 
 
 %.o : %.cpp 
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 .PHONY: clean
 clean:
-	rm $(OBJ) $(TARGET)
+	rm -rf *.o $(TARGET)

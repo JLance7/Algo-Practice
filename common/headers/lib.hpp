@@ -2,9 +2,9 @@
 #define LIB_H
 #include <string>
 #include <vector>
-#include "node.h"
-#include "DoublyLinkList.h"
 #include <unordered_map>
+#include "node.hpp"
+#include "DoublyLinkList.hpp"
 
 //function prototypes
 //common.cpp
@@ -23,8 +23,22 @@ std::vector<node*> link_list(int[], int);
 node* reverse_list(node*);
 void print_list(node*);
 
+//tree_searching
+node* createBinarySearchTree(std::vector<int>);
+void addToTree(node*& head, int num);
+void BFS(node*);
+void preorder(node*);
+void inorder(node*);
+void postorder(node*);
+
+//searching
+int linear_search(int[], int, int);
+int binary_search(int[], int, int);
+
 //sorting.cpp
+int selection_sort(int[], int);
 
 //graphs.cpp
+void dijikstra();
 
 #endif
