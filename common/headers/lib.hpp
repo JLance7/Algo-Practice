@@ -30,13 +30,18 @@ void BFS(node*);
 void preorder(node*);
 void inorder(node*);
 void postorder(node*);
+void invertBinarySearchTree(node*&);
 
 //searching
 int linear_search(int[], int, int);
 int binary_search(int[], int, int);
 
 //sorting.cpp
-int selection_sort(int[], int);
+void selection_sort(int[], int);
+void bubble_sort(int[], int);
+void insertion_sort(int[], int);
+void quicksort(int[], int);
+void mergesort(int[], int);
 
 //graphs.cpp
 void dijikstra();

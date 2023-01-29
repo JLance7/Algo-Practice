@@ -34,11 +34,7 @@ void addToTree(node* &head, int num){
 //--------------------------------------------
 //breadth first traversal (level order)
 void BFS(node* head){
-  std::cout << head-> data << " ";
-  if (head->next2 != NULL)
-    BFS(head->next2);
-  if (head->next != NULL)
-    BFS(head->next);
+  
 }
 
 //----------------------------------------
@@ -67,5 +63,14 @@ void postorder(node* head){
   std::cout << head-> data << std::endl;
 }
 
-
+//----------------------------------------
+//flip tree across vertical axis
+void invertBinarySearchTree(node*& head){
+  if (head == NULL) return;
+  invertBinarySearchTree(head->next2);
+  invertBinarySearchTree(head->next);
+  node* temp = head->next2;
+  head->next2 = head->next;
+  head->next = temp;
+}
 

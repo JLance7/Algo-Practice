@@ -14,19 +14,19 @@ int main(int argc, char** argv){
   // list.add_items(arr, 5);
   // list.print_items();
 
-  // std::vector<int> list{1, 0, 3, 4, 2, 5};
+  // std::vector<int> list{1, 0,-1, 3, 4, 2, 5};
   // node* head = createBinarySearchTree(list);
-  // BFS(head);
   // inorder(head);
-  // preorder(head);
+  // std::cout << "\n";
+  // invertBinarySearchTree(head);
+  // inorder(head);
+
 
   int arr[] = {5, 3, 1, 2, 4};
-  selection_sort(arr, 5);
+  insertion_sort(arr, 5);
   for (int x: arr)
     std::cout << x << " ";
   std::cout << "\n";
-  int i = binary_search(arr, 5, 4);
-  std::cout << "index: " << i << std::endl;
 
   return EXIT_SUCCESS;
 }
